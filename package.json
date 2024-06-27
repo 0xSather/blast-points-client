@@ -1,0 +1,32 @@
+{
+  "name": "blast-points-client",
+  "version": "1.0.0",
+  "description": "Typescript client for interacting with Blast points API. Support for Blast Points Phase 2",
+  "repository": "git@github.com:0xSather/blast-points-client.git",
+  "author": "0xSather <0xsather@proton.me>",
+  "license": "Apache-2.0",
+  "private": false,
+  "scripts": {
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "clean": "rm -rf dist build package",
+    "build": "tsc",
+    "build-all": "yarn clean && yarn build",
+    "query": "ts-node src/scripts/queryPoints.ts"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/node": "^20.11.24",
+    "@types/uuid": "^9.0.8",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.11.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "uuid": "^9.0.1"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ]
+}
