@@ -1,6 +1,6 @@
 {
   "name": "blast-points-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Typescript client for interacting with Blast points API. Support for Blast Points Phase 2",
   "repository": "git@github.com:0xSather/blast-points-client.git",
   "author": "0xSather <0xsather@proton.me>",
