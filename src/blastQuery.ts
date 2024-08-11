@@ -56,7 +56,7 @@ type BearerHeader = {
 type PointsResponse = {
   success: boolean;
   balancesByPointType: {
-    PHASE2_POINTS: PointBalances;
+    PHASE2_POINTS: PHASE2_POINTS_Balances;
     PHASE2_GOLD: PointBalances;
   };
 };
@@ -78,6 +78,11 @@ export type PointBalances = {
   earnedCumulative: string;
   receivedCumulative: string; // received from transfers (finalized)
   finalizedSentCumulative: string; // sent from transfers (finalized)
+};
+type PHASE2_POINTS_Balances = PointBalances & {
+  byAsset: {
+    [asset in Assets]: AssetData;
+  };
 };
 
 type TransferQueryResponse = {
@@ -103,8 +108,13 @@ export type TransferBatchList = TransferBatch & {
 };
 
 export type PointsBalancesAcross = {
-  PHASE2_POINTS: PointBalances;
+  PHASE2_POINTS: PHASE2_POINTS_Balances;
   PHASE2_GOLD: PointBalances;
+};
+type Assets = "ETH" | "WETH" | "USDB" | "BLAST";
+type AssetData = {
+  earnedCumulative: string;
+  earnedCumulativeBlock: number;
 };
 
 export class BlastPointsSession {
